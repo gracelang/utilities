@@ -1,6 +1,6 @@
 # Utilities
 
-This repository contains the utilities, which we hope 
+This repository contains some utilities, which we hope 
 will prove useful to Grace programmers.  We expect more utilities to
 be added over time.
 
