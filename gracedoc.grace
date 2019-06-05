@@ -17,7 +17,7 @@ method parseArguments {
     if (args.size > 1) then {
         def indices = args.indices
         var skip := true
-        for (indices) do { i ->
+        for (2..args.size) do { i ->
             def arg = args.at(i)
             if (arg.at(1)=="-") then {
                 match (arg)
@@ -53,13 +53,13 @@ method parseArguments {
                         print "                 variables are listed as methods. Default is off."
                         print "  [--help]       Optional. Print this usage information."
                     } case { _ ->
-                        io.error.write "gracedoc: Invalid argument {arg}.\n"
+                        io.error.write "gracedoc: Invalid argument {i} ({arg}).\n"
                     }
             } else {
                 if (skip == true) then {
                     skip := false
                 } else {
-                    io.error.write "gracedoc: Invalid argument {arg}. Arguments must start with a -.\n"
+                    io.error.write "gracedoc: Invalid argument {i} ({arg}). Arguments must start with a -.\n"
                     sys.exit(1)
                 }
             }
